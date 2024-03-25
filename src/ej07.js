@@ -23,8 +23,6 @@ let monedaPais;
 
 let codigoPais = "AR";
 monedaPais = obtenerMoneda(codigoPais);
-
-
 console.log(`La moneda del país ${codigoPais} es: ${monedaPais}`);
 
 
