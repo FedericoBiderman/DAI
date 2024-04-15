@@ -134,3 +134,18 @@ console.log('imdbID', imdbID);
 app.listen(port, () => {
     console.log(`Example app listening on port${port}`)
 })
+
+const alumnosArray=[];
+alumnosArray.push(new Alumno("EstebanDido" ,"22888444",20));
+alumnosArray.push(new Alumno("MatiasQueroso","28946255",51));
+alumnosArray.push(new Alumno("ElbaCalao" ,"32623391",18));
+
+app.get('/alumnos',  (req,res) => {
+   res.send(alumnosArray);
+})
+
+app.get('/alumnos/:dni/', (req,res) =>{
+let dni= req.params.dni;
+let encontrado= alumnosArray.find(Alumno => Alumno.dni===dni)
+res.send(encontrado);
+})
